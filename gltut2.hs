@@ -1,14 +1,14 @@
-module Tutorial2.Main (main) where
+module Main (main) where
 
-import Util
+import HGLTut.Util
 import qualified Graphics.Rendering.OpenGL as GL
 import Graphics.Rendering.OpenGL (($=), GLclampf, GLfloat)
 import qualified Graphics.UI.GLFW as GLFW
 import Graphics.UI.GLFW (WindowHint(..), OpenGLProfile(..), Key(..), KeyState(..))
 
-import Tutorial2.Init
-import Tutorial2.Display
-import Tutorial2.Respond
+import HGLTut.Tutorial2.Init
+import HGLTut.Tutorial2.Display
+import HGLTut.Tutorial2.Respond
 
 
 main :: IO ()
@@ -46,13 +46,13 @@ loop window = do
     stop <- respond window
     shouldClose <- GLFW.windowShouldClose window
     -- loop
-    if stop || shouldClose then return () else loop window
+    unless (stop || shouldClose) $ loop window
 
 
 points :: [GLfloat]
-points = [ -1.0f, -1.0f, 0.0f
-         ,  1.0f, -1.0f, 0.0f
-         ,  0.0f,  1.0f, 0.0f
+points = [ -1.0, -1.0, 0.0
+         ,  1.0, -1.0, 0.0
+         ,  0.0,  1.0, 0.0
          ]
 
 

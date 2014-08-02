@@ -24,3 +24,16 @@ executable gltut1
                        GLFW-b ==1.4.*
   -- hs-source-dirs:      
   default-language:    Haskell2010
+
+executable gltut2
+  main-is:             gltut2.hs
+  other-modules:       HGLTut.Util,
+                       HGLTut.Tutorial2.Display,
+                       HGLTut.Tutorial2.Init,
+                       HGLTut.Tutorial2.Respond
+  -- other-extensions:    
+  build-depends:       base ==4.6.*,
+                       OpenGL ==2.8.*,
+                       GLFW-b ==1.4.*
+  -- hs-source-dirs:      
+  default-language:    Haskell2010

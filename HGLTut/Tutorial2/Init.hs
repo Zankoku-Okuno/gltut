@@ -1,6 +1,6 @@
-module Tutorial2.Init where
+module HGLTut.Tutorial2.Init where
 
-import Util
+import HGLTut.Util
 import qualified Graphics.Rendering.OpenGL as GL
 import Graphics.Rendering.OpenGL (($=), GLclampf)
 import qualified Graphics.UI.GLFW as GLFW
