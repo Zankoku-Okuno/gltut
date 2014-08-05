@@ -7,7 +7,7 @@ import qualified Graphics.UI.GLFW as GLFW
 import Graphics.UI.GLFW (Key(..), KeyState(..))
 
 
-respond :: GLFW.Window -> IO Bool
+respond :: GLFW.Window -> IO ()
 respond window = do
     quit <- (== KeyState'Pressed) <$> GLFW.getKey window Key'Escape
-    return quit
+    when quit $ GLFW.setWindowShouldClose window True

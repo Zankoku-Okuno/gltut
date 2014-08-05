@@ -1,4 +1,4 @@
-module HGLTut.Tutorial2.Init where
+module HGLTut.Init where
 
 import HGLTut.Util
 import qualified Graphics.Rendering.OpenGL as GL
@@ -32,9 +32,7 @@ initOrDie :: IO ()
 initOrDie = do
     GLFW.setErrorCallback $ Just handleError
     success <- GLFW.init
-    if True
-        then return ()
-        else die "Failed to initialize GLFW." pass
+    unless success $ die "Failed to initialize GLFW." pass
 
 windowOrDie :: (Int, Int) -> String -> IO GLFW.Window
 windowOrDie (width, height) title = do

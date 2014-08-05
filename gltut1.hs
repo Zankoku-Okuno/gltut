@@ -33,18 +33,18 @@ loop window = do
     GLFW.swapBuffers window
     -- respond to user input
     GLFW.waitEvents
-    stop <- respond window
-    shouldClose <- GLFW.windowShouldClose window
+    () <- respond window
     -- loop
-    unless (stop || shouldClose) $ loop window 
+    shouldClose <- GLFW.windowShouldClose window
+    unless shouldClose $ loop window 
 
 display :: GLFW.Window -> IO ()
 display window = return ()
 
-respond :: GLFW.Window -> IO Bool
+respond :: GLFW.Window -> IO ()
 respond window = do
     quit <- (== KeyState'Pressed) <$> GLFW.getKey window Key'Escape
-    return quit
+    when quit $ GLFW.setWindowShouldClose window True
 
 handleError :: GLFW.Error -> String -> IO ()
 handleError err msg = die ("GLFW failure " ++ show err ++ ": " ++ msg) GLFW.terminate

@@ -28,12 +28,17 @@ executable gltut1
 executable gltut2
   main-is:             gltut2.hs
   other-modules:       HGLTut.Util,
-                       HGLTut.Tutorial2.Display,
-                       HGLTut.Tutorial2.Init,
-                       HGLTut.Tutorial2.Respond
+                       HGLTut.Util.VAO,
+                       HGLTut.Util.VBO,
+                       HGLTut.Init,
+                       HGLTut.Tutorial2.Respond,
+                       HGLTut.Tutorial2.Display
   -- other-extensions:    
   build-depends:       base ==4.6.*,
+                       OpenGLRaw ==1.3.*,
                        OpenGL ==2.8.*,
-                       GLFW-b ==1.4.*
+                       GLFW-b ==1.4.*,
+                       bytestring ==0.10.*,
+                       array ==0.4.*
   -- hs-source-dirs:      
   default-language:    Haskell2010

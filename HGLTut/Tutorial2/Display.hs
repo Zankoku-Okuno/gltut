@@ -4,10 +4,11 @@ import HGLTut.Util
 import qualified Graphics.Rendering.OpenGL as GL
 import Graphics.Rendering.OpenGL (($=), GLclampf)
 import Graphics.UI.GLFW (Window)
+import HGLTut.Util.VAO
 
 
-display :: Window -> IO ()
-display window = return ()
+display :: VAO -> Window -> IO ()
+display vao window = return ()
 
 {-
         // Use our shader
